@@ -1,0 +1,43 @@
+<h1>HttpClient</h1>
+<h2>Meus Repositórios do GitHub:</h2>
+<table border='1'>
+  <tr>
+  <th>ID</th>
+  <th>LINK</th>
+</tr>
+<tr *ngFor="let repo of gitHubRepos">
+  <td> {{repo.id}}</td>
+  <td>{{repo.full_name}}</td>
+</tr>
+</table>
+
+<h2>BitCoin$
+  <button (click)="updateBitCoinRates()">Atualizar</button>
+</h2>
+
+<table border='1'>
+  <tr>
+    <th>Data/hora</th>
+    <th>USD</th>
+    <th>EUR</th>
+  </tr>
+
+  <tr *ngFor = "let rate of this.bitCoinServ.bitCoinRates">
+
+    <td>{{rate.time.updated}}}</td>
+    <td>
+       <span [innerHtml]="rate.bpi.USD.symbol"></span>
+       
+       
+       {{rate.bpi.USD.rate_float}}  
+    </td>
+    <td>
+
+    <span [innerHtml]="rate.bpi.EUR.symbol"></span>
+       {{rate.bpi.EUR.rate_float}}
+    </td>
+  
+    
+  </tr>
+
+</table>
